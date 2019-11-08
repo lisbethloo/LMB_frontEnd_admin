@@ -22,6 +22,7 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 
 @NgModule({
   imports: [
@@ -32,9 +33,15 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    MatPaginatorModule,
+    MatPaginator,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })
+  ],
+  exports: [
+    MatPaginatorModule,
+    MatPaginator,
   ],
   declarations: [
     AppComponent,
