@@ -22,10 +22,15 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+<<<<<<< HEAD
 import { LoginComponent } from './authentication/login/login.component';
 import { MatFormFieldModule, MatButtonModule, MatInputModule, MatRippleModule} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+=======
+import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
+
+>>>>>>> 5e07544b86e22248f0f26ffecee55f72049ca441
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -35,16 +40,22 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+<<<<<<< HEAD
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
     MatRippleModule,
     MatIconModule,
+=======
+    MatPaginatorModule,
+    MatPaginator,
+>>>>>>> 5e07544b86e22248f0f26ffecee55f72049ca441
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })
   ],
   exports: [
+<<<<<<< HEAD
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
@@ -52,6 +63,10 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatIconModule,
     MatCheckboxModule,
     LoginComponent
+=======
+    MatPaginatorModule,
+    MatPaginator,
+>>>>>>> 5e07544b86e22248f0f26ffecee55f72049ca441
   ],
   declarations: [
     AppComponent,

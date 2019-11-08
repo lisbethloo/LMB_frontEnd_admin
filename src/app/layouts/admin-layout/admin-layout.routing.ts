@@ -52,10 +52,10 @@ export const AdminLayoutRoutes: Routes = [
     //         component: UpgradeComponent
     //     }]
     // }
-    { path: 'dashboard',      component: DashboardComponent },
-    { path: 'user-profile',   component: UserProfileComponent },
+    { path: 'acerca-nosotros',      component: DashboardComponent },
     { path: 'servicios',     component: TableListComponent },
-    { path: 'typography',     component: TypographyComponent },
+    { path: 'trabajos',     component: TypographyComponent },
+    { path: 'inicio-de-sesion',   component: UserProfileComponent },
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },

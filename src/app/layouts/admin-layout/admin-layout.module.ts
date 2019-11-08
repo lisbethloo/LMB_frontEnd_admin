@@ -18,8 +18,11 @@ import {
   MatRippleModule,
   MatFormFieldModule,
   MatTooltipModule,
-  MatSelectModule
+  MatSelectModule,
 } from '@angular/material';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -32,6 +35,10 @@ import {
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    MatPaginatorModule,
+  ],
+  exports: [
+    MatPaginatorModule
   ],
   declarations: [
     DashboardComponent,
