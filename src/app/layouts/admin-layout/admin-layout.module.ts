@@ -18,7 +18,7 @@ import {
   MatRippleModule,
   MatFormFieldModule,
   MatTooltipModule,
-  MatSelectModule,
+  MatSelectModule
 } from '@angular/material';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
@@ -36,6 +36,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatSelectModule,
     MatTooltipModule,
     MatPaginatorModule,
+
   ],
   exports: [
     MatPaginatorModule

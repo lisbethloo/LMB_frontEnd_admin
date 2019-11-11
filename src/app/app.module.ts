@@ -26,8 +26,14 @@ import { LoginComponent } from './authentication/login/login.component';
 import { MatFormFieldModule, MatButtonModule, MatInputModule, MatRippleModule} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { HttpClientModule } from '@angular/common/http';
+
+
+
+
 @NgModule({
   imports: [
+    HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
@@ -40,6 +46,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatInputModule,
     MatRippleModule,
     MatIconModule,
+    FormsModule ,
+    MatCheckboxModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })
@@ -50,13 +58,13 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatInputModule,
     MatRippleModule,
     MatIconModule,
-    MatCheckboxModule,
-    LoginComponent
+    LoginComponent,
+
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    LoginComponent,
+    LoginComponent
 
   ],
   providers: [],
