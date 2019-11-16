@@ -1,5 +1,8 @@
 <div class="main-content">
   <div class="container-fluid">
+    <div>
+        <button mat-raised-button color="primary" (click)="openDialog()"><i class="fa fa-plus" aria-hidden="true"></i> </button>
+    </div>
       <div class="row">
           <div class="col-md-12">
               <div class="card">
@@ -35,70 +38,48 @@
                                   <th>
                                     Autor
                                   </th>
+                                  <th>
+                                    Acciones
+                                  </th>
                                 </thead>
                               <tbody>
-                                  <tr>
+                                  <tr *ngFor="let Publicaciones of Publicacion">
                                       <td>
-                                          1
+                                          {{Publicaciones.id}}
                                       </td>
                                       <td>
-                                          Dakota Rice
+                                          {{Publicaciones.titulo}}
                                       </td>
                                       <td>
-                                          Niger
+                                         {{ Publicaciones.cuerpo}}
                                       </td>
                                       <td>
-                                          Oud-Turnhout
+                                         {{ Publicaciones.img}}
+                                       </td>
+                                      <td class="text-primary">
+                                          {{ Publicaciones.ofertaMinima}}
                                       </td>
                                       <td class="text-primary">
-                                          $36,738
-                                         
+                                          {{ Publicaciones.ofertaMaxima}}
+                                        
                                       </td>
-                                      <td class="text-primary">
-                                       
-                                          <button mat-raised-button color="primary">Agregar</button>
-                                      </td>
-                                      <td class="text-primary">
-                                       
-                                        <button mat-raised-button color="link">Actualizar</button>
+                                      <td >
+                                          {{ Publicaciones.habilidades}}
+                                     </td>
+                                      <td >
+                                         {{ Publicaciones.autor}}
                                     </td>
-                                    <td class="text-primary">
-                                       
-                                        <button mat-raised-button color="warn">Eliminar</button>
+                                    
+                                    <td >
+                                        <button mat-raised-button color="link" style="margin: 5px;" (click)="openDialog(Publicaciones)"> <i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                        <button mat-raised-button color="warn"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                     </td>
                                       
                                   </tr>
                                   
                                  
                               </tbody>
-                              <!--mat-form-field>
-                                List length:
-                                <input matInput [(ngModel)]="length">
-                              </mat-form-field>
-                              
-                              <mat-form-field>
-                                Page size:
-                                <input matInput [(ngModel)]="pageSize">
-                              </mat-form-field>
-                              <mat-form-field>
-                                Page size options:
-                                <input matInput
-                                       [ngModel]="pageSizeOptions"
-                                       (ngModelChange)="setPageSizeOptions($event)">
-                              </mat-form-field>
-                              
-                              <mat-paginator [length]="length"
-                               [pageSize]="pageSize"
-                               [pageSizeOptions]="pageSizeOptions"
-                               (page)="pageEvent = $event">
-                              </mat-paginator>
-                              
-                              <div *ngIf="pageEvent">
-                                <h5>Page Change Event Properties</h5>
-                                <div>List length: {{pageEvent.length}}</div>
-                                <div>Page size: {{pageEvent.pageSize}}</div>
-                                <div>Page index: {{pageEvent.pageIndex}}</div>
-                              </div-->
+
                           </table>
                       </div>
                   </div>

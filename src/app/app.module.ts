@@ -23,10 +23,12 @@ import {
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './authentication/login/login.component';
-import { MatFormFieldModule, MatButtonModule, MatInputModule, MatRippleModule} from '@angular/material';
+import { MatFormFieldModule, MatButtonModule, MatInputModule, MatRippleModule, MatDialogModule, MatToolbarModule} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { HttpClientModule } from '@angular/common/http';
+import {MatTabsModule} from '@angular/material/tabs';
+import { RPublicacionesComponent } from './table-list/r-publicaciones/r-publicaciones.component';
 
 
 
@@ -47,7 +49,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatRippleModule,
     MatIconModule,
     FormsModule ,
+    MatTabsModule,
     MatCheckboxModule,
+    MatDialogModule,
+    MatToolbarModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })
@@ -57,15 +62,20 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     MatInputModule,
     MatRippleModule,
-    MatIconModule,
     LoginComponent,
+    MatIconModule,
+
 
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    LoginComponent
+    LoginComponent,
+    RPublicacionesComponent
 
+  ],
+  entryComponents: [
+    RPublicacionesComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

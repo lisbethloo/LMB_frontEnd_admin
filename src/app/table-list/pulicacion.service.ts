@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { environment } from 'environments/environment';
 import { AuthService } from 'app/auth/auth.service';
+import { IPublicaciones } from './publicaciones';
 
 @Injectable({
   providedIn: 'root'
@@ -37,7 +38,7 @@ export class PulicacionService {
       });
   }
 
-  getPublicacion(): Promise<any> {
+  /*getPublicacion(): Promise<any> {
       return new Promise((resolve, reject) => {
           if ( this.routeParams.id === 0 ) {
               this.onPublicacionChanged.next(false);
@@ -51,6 +52,15 @@ export class PulicacionService {
                   }, reject);
           }
       });
+  }*/
+  getPublicacion(): Observable<any> {
+      return this._httpClient.get(environment.apiBaseUrl + '/publicacion/');
+  }
+  addPublicacion(publicacion: IPublicaciones): Observable<IPublicaciones> {
+    return this._httpClient.post(environment.apiBaseUrl + '/publicacion', publicacion);
+  }
+  updatePublicacion(publicacion: IPublicaciones): Observable<IPublicaciones>  {
+    return this._httpClient.put(environment.apiBaseUrl + '/publicacion', publicacion);
   }
 
   savePublicacion(product): Promise<any> {
@@ -62,7 +72,7 @@ export class PulicacionService {
               }, reject);
       });
   }
-
+/*
   addPublicacion(product): Promise<any> {
       delete product.id;
       product.autor = this._authService.getUserPayload().id;
@@ -72,5 +82,5 @@ export class PulicacionService {
                   resolve(response);
               }, reject);
       });
-  }
+  }*/
 }
