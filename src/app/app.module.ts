@@ -30,6 +30,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { HttpClientModule } from '@angular/common/http';
 import {MatTabsModule} from '@angular/material/tabs';
 import { RPublicacionesComponent } from './table-list/r-publicaciones/r-publicaciones.component';
+import { RTrabajosComponent } from './typography/r-trabajos/r-trabajos.component';
 
 
 
@@ -73,7 +74,8 @@ import { RPublicacionesComponent } from './table-list/r-publicaciones/r-publicac
     AppComponent,
     AdminLayoutComponent,
     LoginComponent,
-    RPublicacionesComponent
+    RPublicacionesComponent,
+    RTrabajosComponent
 
   ],
   entryComponents: [
