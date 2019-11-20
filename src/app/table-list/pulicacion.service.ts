@@ -60,7 +60,14 @@ export class PulicacionService {
     return this._httpClient.post(environment.apiBaseUrl + '/publicacion', publicacion);
   }
   updatePublicacion(publicacion: IPublicaciones): Observable<IPublicaciones>  {
-    return this._httpClient.put(environment.apiBaseUrl + '/publicacion', publicacion);
+    return this._httpClient.put(environment.apiBaseUrl + '/publicacion/' + publicacion.id, publicacion);
+  }
+  delPublicaciones(publicacion: any)  {
+    return this._httpClient.delete(environment.apiBaseUrl + '/publicacion/' + publicacion);
+  }
+
+  getUsers() {
+        return this._httpClient.get(environment.apiBaseUrl + '/usuario');
   }
 
   savePublicacion(product): Promise<any> {

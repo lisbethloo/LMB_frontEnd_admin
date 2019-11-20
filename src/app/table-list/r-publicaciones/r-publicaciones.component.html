@@ -1,46 +1,59 @@
-
-    <span>  <span *ngIf="data.id">Actualizar</span> <span *ngIf="!data.id">Registrar</span> Publicasiones</span>
-    <span class="fill-remaining-space"></span>
-    <button class="btn-dialog-close" mat-stroked-button (click)="closeDialog()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+<span> <span *ngIf="data.id">Actualizar</span> <span *ngIf="!data.id">Registrar</span> Publicasiones</span>
+<span class="fill-remaining-space"></span>
+<!--button class="btn-dialog-close" mat-stroked-button (click)="closeDialog()" tabIndex="-1">
+    <mat-icon>clear</mat-icon>
+</button-->
 <hr>
-<form [formGroup]="form" class="normal-form" (submit)="addPublicaciones()" >
-   
-            <div class="controles-container">
+<form [formGroup]="form" class="normal-form" (submit)="addPublicaciones()">
 
+    <div class="controles-container">
 
-                <input type="hidden" formControlName="id">
+        <div *ngIf="!data.id">
 
-                <mat-form-field>
-                    <input formControlName="img" matInput placeholder="Imagen">
-                    <mat-error>imagen requerida.</mat-error>
-                </mat-form-field>
-                <mat-form-field>
-                    <input formControlName="titulo" matInput placeholder="Titulo">
-                    <mat-error>titulo requerido.</mat-error>
-                </mat-form-field>
-                <mat-form-field>
-                    <input formControlName="cuerpo" matInput placeholder="Cuerpo">
-                    <mat-error>cuerpo requerido </mat-error>
-                </mat-form-field>
-                <mat-form-field>
-                    <input formControlName="ofertaMinima" matInput placeholder="Oferta Minima">
-                </mat-form-field>
-                <mat-form-field>
-                    <input formControlName="ofertaMaxima" matInput placeholder="Oferta Maxima">
-                </mat-form-field>
-                <mat-form-field>
-                    <input formControlName="habilidades" matInput placeholder="Habilidades">
-                </mat-form-field>
-                <mat-form-field>
-                    <input formControlName="autor" matInput placeholder="Autor">
-                </mat-form-field>
+            <input type="hidden" formControlName="id">
+        </div>
 
-            </div>
-  
+        <mat-form-field>
+            <mat-label>Imagen</mat-label>
+            <input formControlName="img" matInput placeholder="Imagen">
+            <mat-error>Imagen es rrequerida</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Titulo</mat-label>
+            <input formControlName="titulo" matInput placeholder="Titulo">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Cuerpo</mat-label>
+            <input formControlName="cuerpo" matInput placeholder="Cuerpo">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Oferta Minima</mat-label>
+            <input formControlName="ofertaMinima" matInput placeholder="Oferta Minima">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Oferta Maxima</mat-label>
+            <input formControlName="ofertaMaxima" matInput placeholder="Oferta Maxima">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Habilidades</mat-label>
+            <input formControlName="habilidades" matInput placeholder="Habilidades">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Autor</mat-label>
+            <mat-select formControlName="autor">
+                <mat-option *ngFor="let user of users" [value]="user.id">
+                    {{user.nombre}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </div>
+
     <mat-dialog-actions align="end">
         <div class="button-row">
             <button mat-raised-button color="warn" (click)="closeDialog()">Cancelar</button>
-            <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid"> <span *ngIf="data.id">Actualizar</span> <span *ngIf="!data.id">Registrar</span> </button>
+            <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid"> <span
+                    *ngIf="data.id">Actualizar</span> <span *ngIf="!data.id">Registrar</span> </button>
         </div>
     </mat-dialog-actions>
 </form>

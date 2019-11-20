@@ -23,7 +23,8 @@ import {
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './authentication/login/login.component';
-import { MatFormFieldModule, MatButtonModule, MatInputModule, MatRippleModule, MatDialogModule, MatToolbarModule} from '@angular/material';
+import { MatFormFieldModule, MatButtonModule, MatInputModule, MatRippleModule,
+  MatDialogModule, MatToolbarModule, MatSelectModule} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { HttpClientModule } from '@angular/common/http';
@@ -53,6 +54,7 @@ import { RPublicacionesComponent } from './table-list/r-publicaciones/r-publicac
     MatCheckboxModule,
     MatDialogModule,
     MatToolbarModule,
+    MatSelectModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })

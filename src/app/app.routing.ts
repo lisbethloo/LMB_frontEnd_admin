@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path: '',
     canActivate: [AuthGuard],
-    redirectTo: 'dashboard',
+    redirectTo: 'acerca-nosotros',
     pathMatch: 'full',
   }, {
     path: '',

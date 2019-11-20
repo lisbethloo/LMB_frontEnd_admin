@@ -54,7 +54,7 @@
                                          {{ Publicaciones.cuerpo}}
                                       </td>
                                       <td>
-                                         {{ Publicaciones.img}}
+                                         {{ Publicaciones.img | slice:0:30}} <strong>....</strong>
                                        </td>
                                       <td class="text-primary">
                                           {{ Publicaciones.ofertaMinima}}
@@ -67,12 +67,12 @@
                                           {{ Publicaciones.habilidades}}
                                      </td>
                                       <td >
-                                         {{ Publicaciones.autor}}
+                                         {{ Publicaciones.autor.nombre}}
                                     </td>
                                     
                                     <td >
                                         <button mat-raised-button color="link" style="margin: 5px;" (click)="openDialog(Publicaciones)"> <i class="fa fa-pencil" aria-hidden="true"></i></button>
-                                        <button mat-raised-button color="warn"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                        <button mat-raised-button color="warn" (click)="delPublicaciones(Publicaciones.id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                     </td>
                                       
                                   </tr>

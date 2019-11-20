@@ -19,7 +19,7 @@ export class TableListComponent implements OnInit {
 
   // material dialog
   openDialog(data: any = {}): void {
-    console.log(data)
+    // sconsole.log(data)
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
@@ -46,6 +46,18 @@ export class TableListComponent implements OnInit {
           console.error(err)
         }
       );
+  }
+
+  delPublicaciones(publicacion: any ) {
+
+    this.pulicacionService.delPublicaciones(publicacion).subscribe(
+      res => {
+          this.getPublicaciones();
+      },
+      err => {
+          console.error(err);
+      }
+    );
   }
 
 }
