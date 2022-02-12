@@ -33,7 +33,7 @@
     "@fortawesome/fontawesome-free": "~5.6.3",
     "angular-bootstrap-md": "^8.1.0",
     "animate.css": "~3.7.2",
-    "ajv": "6.10.0",
+    "ajv": "6.12.3",
     "arrive": "2.4.1",
     "bootstrap": "4.3.1",
     "bootstrap-material-design": "4.1.2",
